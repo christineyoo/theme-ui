@@ -1,22 +1,34 @@
+/** @jsxImportSource theme-ui */ //enables us to start using the sx prop
+import { useColorMode } from 'theme-ui';
+import { useMediaQuery } from 'react-responsive';
+
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const [colorMode, setColorMode] = useColorMode();
+
+  useMediaQuery({
+    query: '(prefers-color-scheme: dark)',
+  }, undefined, (isDarkPreferred) => setColorMode(isDarkPreferred ? 'dark' : 'light'))
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Theme UI Playground
         </p>
         <a
-          className="App-link"
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+          sx={{fontWeight: 'bold', color: 'primary'}}
+        >Link</a>
+
+        <br />
+
+        <button onClick={() => setColorMode(colorMode === 'light' ? 'dark' : 'light')} sx={{bg: 'primary', color: 'inverseText'}}>Toggle {colorMode === 'light' ? 'Dark' : 'Light'}</button>
       </header>
     </div>
   );
