@@ -9,8 +9,8 @@ function App() {
   const [colorMode, setColorMode] = useColorMode();
 
   useMediaQuery({
-    query: '(prefers-color-scheme: dark)',
-  }, undefined, (isDarkPreferred) => setColorMode(isDarkPreferred ? 'dark' : 'light'))
+    query: '(prefers-color-scheme: dark)', //this is a boolean
+  }, undefined, (isDarkPreferred) => setColorMode(isDarkPreferred ? 'dark' : 'light')) //isDarkPreferred is a boolean
 
   return (
     <div className="App">

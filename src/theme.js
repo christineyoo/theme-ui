@@ -1,7 +1,12 @@
 const theme = {
-    config: { //see Application > Local storage
-        useLocalStorage: false //if the user's preference is already stored in the OS
-    }, //react-responsive package 
+    /* 
+    You can configure it to save in local storage or OS settings.
+    For local storage, it does it automatically. (See inspect => Application > Local storage)
+    For OS setting, include this config code and `npm install react-responsive --save`
+    */
+    // config: {
+    //     useLocalStorage: false
+    // },
     initialColorModeName: 'light',
     colors: {
         text: 'black',
