@@ -1,6 +1,8 @@
 /** @jsxImportSource theme-ui */ //enables us to start using the sx prop
 import { useColorMode } from 'theme-ui';
 import { useMediaQuery } from 'react-responsive';
+import { Route, Routes } from 'react-router-dom';
+import About from './About';
 
 import logo from './logo.svg';
 import './App.css';
@@ -30,6 +32,10 @@ function App() {
 
         <button onClick={() => setColorMode(colorMode === 'light' ? 'dark' : 'light')} sx={{bg: 'primary', color: 'inverseText'}}>Toggle {colorMode === 'light' ? 'Dark' : 'Light'}</button>
       </header>
+      <Routes>
+        <Route path='/about' element={<About />} />
+      </Routes>
+        
     </div>
   );
 }
