@@ -1,3 +1,7 @@
+const darkGray = '#282c34';
+const darkBlue = '#01408e';
+const lightBlue = '#8fceff';
+
 const theme = {
     /* 
     You can configure it to save in local storage or OS settings.
@@ -12,14 +16,18 @@ const theme = {
         text: 'black',
         inverseText: 'white',
         background: 'white',
-        primary: '#01408e',
+        primary: darkBlue,
+        secondary: 'red',
         modes: {
             dark: {
                 text: 'white',
                 inverseText: 'black',
-                background: '#282c34',
-                primary: '#8fceff'
+                background: darkGray,
+                primary: lightBlue
             }
+        },
+        button: {
+            padding: 3
         }
     }
 }

@@ -4,39 +4,30 @@ import { useMediaQuery } from 'react-responsive';
 import { Route, Routes } from 'react-router-dom';
 import About from './About';
 
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   const [colorMode, setColorMode] = useColorMode();
 
-  useMediaQuery({
+  {/* useMediaQuery({
     query: '(prefers-color-scheme: dark)', //this is a boolean
   }, undefined, (isDarkPreferred) => setColorMode(isDarkPreferred ? 'dark' : 'light')) //isDarkPreferred is a boolean
+*/}
+  
 
   return (
-    <div className="App">
+    <>
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
+        <h1>
           Theme UI Playground
-        </p>
-        <a
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-          sx={{fontWeight: 'bold', color: 'primary'}}
-        >Link</a>
-
-        <br />
-
+        </h1>
         <button onClick={() => setColorMode(colorMode === 'light' ? 'dark' : 'light')} sx={{bg: 'primary', color: 'inverseText'}}>Toggle {colorMode === 'light' ? 'Dark' : 'Light'}</button>
       </header>
       <Routes>
-        <Route path='/about' element={<About />} />
+          <Route path='/about' element={<About />} />
       </Routes>
-        
-    </div>
+    </>
+    
   );
 }
 
