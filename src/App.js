@@ -29,12 +29,6 @@ function App() {
         </h1>
         <button onClick={() => setColorMode(colorMode === 'light' ? 'dark' : 'light')} sx={{bg: 'primary', color: 'inverseText'}}>Toggle {colorMode === 'light' ? 'Dark' : 'Light'}</button>
         <DatePicker format='MM/dd/yyyy' id='date-picker' label='Date Of Birth' value={selectedDate} onChange={date => setSelectedDate(date)}  />
-        <DatePicker 
-        renderInput={props => <TextField {...props} />}
-        value={selectedDate}
-        label='Second Thing'
-        onChange={date => setSelectedDate(date)}
-      />
       </header>
       <Routes>
           <Route path='/about' element={<About />} />
